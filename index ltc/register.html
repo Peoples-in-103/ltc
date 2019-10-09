@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<link style="text/css" rel="stylesheet" href="./css/zui.min.css">
+	<link style="text/css" rel="stylesheet" href="./css/register.css">
+	<script type="text/javascript" src="./js/jquery-3.4.0.min.js"></script>
+	<script type="text/javascript" src="./js/zui.min.js"></script>
+	<script type="text/javascript" src="./js/register.js"></script>
+	<script type="text/javascript" src="./js/md5.js"></script>
+</head> 
+<body>
+	<div style="position:absolute;z-index:-1;width:100%;height:100%;min-height: 700px">
+    	<img src="./img/timg.jpg" width="100%" height="100%" />
+	</div>
+	<div class="register-main">
+		<div class="register-top"></div>
+		<div class="register-middle">
+			<div class="register-form">
+				<ul class=" register-title nav-justified">
+					<li id="uc" class="active-uc"><a href="javascript:void(0);" onclick="UsernameClick()" class="uc">用户名注册</a></li>
+					<li id="ec"><a href="javascript:void(0);" onclick="EmailClick()" class="ec">邮箱注册</a></li>
+					<li id="pc"><a href="javascript:void(0);" onclick="PhoneClick()" class="pc">手机注册</a></li>
+				</ul>
+				<!-- 用户名注册 -->
+				<form class="form-horizontal" action="login.html" method="post" name="form" id="form">
+					<!-- 用户名 -->
+					<div id="namechose">
+						<div class="form-laber" name="form-laber"><label for="name" class="col-sm-offset-2 ">用户名</label></div>
+						<div class="form-group">
+							<div class="col-sm-2"></div>
+							<div class="col-md-8 col-sm-10">
+								<input type="text" name="name" id="name" class="form-control fl" placeholder="用户名长度应为4-12个字符" onkeyup="InputUsernameKeyup()">
+							</div>
+						</div>
+						<div class="form-tips">
+							<div class="col-sm-2"></div>
+							<div class="col-md-8"><span id="tip-name" class="tips"><label id="errorName" name="error"></label></span></div>
+						</div>
+					</div>
+					<!-- 邮箱 -->
+					<div id="emailchose" class="form-unchose">
+						<div class="form-laber" name="form-laber"><label for="email" class="col-sm-offset-2 ">邮箱</label></div>
+						<div class="form-group">
+							<div class="col-sm-2"></div>
+							<div class="col-md-8 col-sm-10">
+								<input type="text" name="email" id="email" class="form-control fl" onblur="InputEmailBlur()">
+							</div>
+						</div>
+						<div class="form-tips">
+							<div class="col-sm-2"></div>
+							<div class="col-md-8"><span id="tip-email" class="tips"><label id="errorEmail" name="error"></label></span></div>
+						</div>
+					</div>
+					<!-- 手机号 -->
+					<div id="phonechose" class="form-unchose">
+						<div class="form-laber" name="form-laber"><label for="phone" class="col-sm-offset-2 ">手机号</label></div>
+						<div class="form-group">
+							<div class="col-sm-2"></div>
+							<div class="col-md-8 col-sm-10">
+								<input type="text" name="phone" id="phone" class="form-control fl" onblur="InputPhoneBlur()">
+							</div>
+						</div>
+						<div class="form-tips2">
+							<div class="col-sm-2"></div>
+							<div class="col-md-8"><span id="tip-phone" class="tips"><label id="errorPhone" name="error"></label></span></div>
+						</div>
+						<!-- 验证码 -->
+						<div class="form-laber" name="form-laber"><label for="code" class="col-sm-offset-2 ">验证码</label></div>
+						<div class="form-group">
+							<div class="col-sm-2"></div>
+							<div class="col-md-5">
+								<input type="text" name="code" id="code" class="form-control">
+							</div>
+							<div class="col-md-3">
+								<input type="button" id="send" class="btn btn-primary phone-btn" value="发送验证码" onclick="sendcode()">
+							</div>
+						</div>
+						<div class="form-tips2">
+							<div class="col-sm-2"></div>
+							<div class="col-md-8"><span id="tip-code" class="tips"><label id="errorCode" name="error"></label></span></div>
+						</div>
+					</div>
+					<!-- 密码 -->
+					<div class="form-laber" name="form-laber"><label for="password" class="col-sm-offset-2 ">密码</label></div>
+					<div class="form-group">
+						<div class="col-sm-2"></div>
+						<div class="col-md-8 col-sm-10">
+							<input type="password" name="password" id="password" class="form-control" onkeyup="InputPasswordKeyup()">
+						</div>
+					</div>
+					<div class="form-tips" name="phone-tips">
+						<div class="col-sm-2"></div>
+						<div class="col-md-8"><span id="tip-pwd" class="tips"><label id="errorPassword" name="error"></label></span></div>
+					</div>
+					<!-- 确认密码 -->
+					<div class="form-laber" name="form-laber"><label for="repassword" class="col-sm-offset-2 ">确认密码</label></div>
+					<div class="form-group">
+						<div class="col-sm-2"></div>
+						<div class="col-md-8 col-sm-10">
+							<input type="password" name="repassword" id="repassword" class="form-control" onkeyup="InputRepasswordKeyup()">
+						</div>
+					</div>
+					<div class="form-tips" name="phone-tips">
+						<div class="col-sm-offset-2 col-md-4"><span id="tip-repwd" class="tips"><label id="errorRepassword" name="error"></label></span></div>
+						<div class="col-md-6 ckbox" id="ckreg">
+							<label class="checkbox-inline">
+  								<input type="checkbox" id="checkbox" value="1">我已阅读并同意
+							</label>
+							<a data-toggle="modal" data-target="#regModal">《注册协议》</a>
+						</div>
+					</div>
+					<!-- 注册协议对话框 -->
+					<div class="modal fade" id="regModal">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+									<h4 class="modal-title">注册协议</h4>
+								</div>
+								<div class="modal-body">
+									<p>1............</p>
+									<p>2............</p>
+									<p>3............</p>
+									<p>4............</p>
+									<p>5............</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 注册按钮 -->
+					<div class="form-group" id="form-group">
+						<div class="col-sm-offset-2 col-md-8 col-sm-10">
+							<input type="button" class="btn btn-primary register-btn" value="立即注册" onclick="check()">
+						</div>
+					</div>
+				</form>
+				<div class="tologin">
+					<a href="./login.html">已有账号？立即登录</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

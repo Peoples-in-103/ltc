@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>嗨库</title>
+	<link style="text/css" rel="stylesheet" href="./css/zui.min.css">
+	<link style="text/css" rel="stylesheet" href="./css/index.css">
+	<script type="text/javascript" src="./js/jquery-3.4.0.min.js"></script>
+	<script type="text/javascript" src="./js/zui.min.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+</head>
+<body style="background-color: #eee">
+	<!-- 导航 -->
+	<div id="topAnchor"></div>
+	<div class="navbar-position" id="nav">
+		<nav class="navbar container-fluid" role="navigation">
+			<div class="container-fluid">
+				<!-- 导航头部 -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="./index.html">Hicool</a>
+				</div>
+				<!-- 导航项目 -->
+				<div class="collapse navbar-collapse navbar-collapse-example">
+					<!-- 一般导航项目 -->
+					<ul class="mynav navbar-nav navbar-nav-left">
+						<li class="active"><a href="./index.html">首页</a></li>
+						<li><a href="#">游戏库</a></li>
+						<li class="dropdown">
+							<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" >蒸汽单机<b class="caret"></b></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">角色</a></li>
+								<li><a href="#">模拟</a></li>
+								<li><a href="#">策略</a></li>
+								<li><a href="#">休闲</a></li>
+								<li><a href="#">冒险</a></li>
+								<li><a href="#">动作</a></li>
+								<li><a href="#">独立</a></li>
+							</ul>
+						</li>
+						<li><a href="#">日系游戏</a></li>
+						<li><a href="#">手机游戏</a></li>
+						<li><a href="#">新游推荐</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-nav-right-nologin" id="nologin-nav">
+						<li><a href="login.html">登录</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-nav-right" id="login-nav" style="display: none;">
+						<li class="publish">
+							<div style="width: 100px;height: 50px;">
+								<div class="fl" style="width: 100%;height: 100%;"><a href="#"><img src="./img/publish.png" style="width: 20px">发布</a></div>
+							</div>	
+						</li>
+						<li class="nav-user">
+							<a class="nav-user-a" data-toggle="dropdown"><img name="headpic" src="./img/head.jpg"></a>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li><a href="#">
+									<img class="img-circle drop-img" name="headpic" src="./img/head.jpg">
+									<div class="drop-user" name="name"></div>
+									<div class="drop-user"><p>个人主页</p></div>
+								</a></li>
+								<li class="divider"></li>
+							    <li><a href="#">私信</a></li>
+							    <li><a href="#">编辑个人资料</a></li>
+							    <li class="divider"></li>
+							    <li><a href="javascript:logout()">登出</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- 手机端头像 -->
+				<div class="phone-userhead">
+					<a data-toggle="dropdown"><img name="headpic" src="./img/head.jpg"></a>
+					<ul class="dropdown-menu pull-right" role="menu">
+						<li><a href="#">
+							<img class="img-circle drop-img" name="headpic" src="./img/head.jpg">
+							<div class="drop-user" name="name"></div>
+							<div class="drop-user"><p>个人主页</p></div>
+						</a></li>
+						<li class="divider"></li>
+					    <li><a href="#">私信</a></li>
+					    <li><a href="#">编辑个人资料</a></li>
+					    <li class="divider"></li>
+					    <li><a href="javascript:logout()">登出</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- 中间部分 -->
+	<div class="middle">
+		<!-- 展示窗口 -->
+		<div class="showcase row">
+			<!-- 轮播图 -->
+			<div class="col-md-6">
+				<div class="loopbox" id="loopbox" onmouseover="stop()" onmouseout="start()">
+					<!-- 圆点指示器 -->
+					<ol id="olbox" class="carousel-indicators">
+					</ol>
+					<!-- 轮播项目 -->
+					<div class="slide">
+						<a href="#"><img alt="slide" title="进入页面查看" src="./img/pic.jpg">
+							<div class="carousel-caption">
+								<h1>新游noita正式上线</h1>
+							</div>
+							<div class="gradients-bg"></div>
+						</a>
+					</div>
+					<div class="slide">
+						<a href="#"><img alt="slide" title="进入页面查看" src="./img/pic1.jpg">
+							<div class="carousel-caption">
+								<h1>虐杀原形4将于10月21日发布</h1>
+							</div>
+							<div class="gradients-bg"></div>
+						</a>
+					</div>
+					<div class="slide">
+						<a href="#"><img alt="slide" title="进入页面查看" src="./img/pic1.jpg">
+							<div class="carousel-caption">
+								<h1>虐杀原形4将于10月21日发布</h1>
+							</div>
+							<div class="gradients-bg"></div>
+						</a>
+					</div>
+					<div class="slide">
+						<a href="#"><img alt="slide" title="进入页面查看" src="./img/pic1.jpg">
+							<div class="carousel-caption">
+								<h1>虐杀原形4将于10月21日发布</h1>
+							</div>
+							<div class="gradients-bg"></div>
+						</a>
+					</div>
+					<div class="slide">
+						<a href="#"><img alt="slide" title="进入页面查看" src="./img/pic2.jpg">
+							<div class="carousel-caption">
+								<h1>指环王新作！</h1>
+							</div>
+							<div class="gradients-bg"></div>
+						</a>
+					</div>
+					<div class="slide">
+						<a href="#"><img alt="slide" title="进入页面查看" src="./img/pic1.jpg">
+							<div class="carousel-caption">
+								<h1>虐杀原形4将于10月21日发布</h1>
+							</div>
+							<div class="gradients-bg"></div>
+						</a>
+					</div>
+					<!-- 项目切换按钮 -->
+					<a class="left carousel-control" href="javascript:LeftClick()"><span class="icon iconleft">&lt;</span></a>
+					<a class="right carousel-control" href="javascript:RightClick()"><span class="icon iconright">&gt;</span></a>
+				</div>
+			</div>
+			<!-- 静态展示 -->
+			<div class="col-md-6">
+				<div class="showcase-t">
+					<a href="#"><img title="进入页面查看" src="./img/pic4.jpg">
+						<div class="gradients-bg showcase-text">
+							<p>《嗜血代码》v1.01中文硬盘版下载</p>
+						</div>
+					</a>
+				</div>
+				<div class="showcase-b row">
+					<div class="col-sm-6">
+						<div class="showcase-b-sm">
+							<a href="#"><img title="进入页面查看" src="./img/pic5.jpg">
+								<div class="gradients-bg showcase-text">
+									<p>皎月女神传说皮肤莲花之令</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-sm-6 phone-showcase-b-sm">
+						<div class="showcase-b-sm">
+							<a href="#"><img title="进入页面查看" src="./img/pic6.jpg">
+								<div class="gradients-bg showcase-text">
+									<p>《守望先锋》新英雄女武神已上线</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 主体部分 -->
+		<div class="main row">
+			<!-- 左侧主体 -->
+			<div class="col-md-9">
+				<!-- 主体内部导航栏 -->
+				<div class="main-nav card" id="navAnchor">
+					<ul class="nav nav-pills">
+						<li><a class="toAnchor" href="#navAnchor">角色</a></li>
+						<li><a class="toAnchor" href="#navAnchor">模拟</a></li>
+						<li><a class="toAnchor" href="#navAnchor">策略</a></li>
+						<li><a class="toAnchor" href="#navAnchor">休闲</a></li>
+						<li><a class="toAnchor" href="#navAnchor">冒险</a></li>
+						<li><a class="toAnchor" href="#navAnchor">动作</a></li>
+						<li><a class="toAnchor" href="#navAnchor">独立</a></li>
+					</ul>
+				</div>
+				<!-- 主体卡片 -->
+				<div class="main-card">
+					<ul class="card-list row" id="card-list">
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+						<li class="col-sm-3 maincard">
+							<div class="card">
+								<div class="card-pic actimg">
+									<img title="进入页面查看" src="./img/pic.jpg">
+								</div>
+								<div class="card-info">
+									<div class="cinfo-user">张三&nbsp;昨天</div>
+									<div class="cinfo-title"><a><h2>noita</h2></a></div>
+									<div class="cinfo-addtion fr"><img src="./img/view.png">&nbsp;652&nbsp;&nbsp;<img src="./img/comment.png">&nbsp;52&nbsp;&nbsp;<img src="./img/collection.png">&nbsp;23</div>
+									<div class="clr"></div>
+									<div class="cinfo-kind"><a>策略</a></div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 底部分页条 -->
+				<div class="main-footer card">
+					<ul class="pager pager-loose" id="ulbox">
+					</ul>
+				</div>
+			</div>
+			<!-- 右侧卡片 -->
+			<div class="col-md-3">
+				<!-- 个人信息卡片 -->
+				<div class="usercard  card" id="login-usercard" style="display: none;">
+					<div class="userpic">
+						<div class="user-bgimg">
+							<img name="bgpic" src="./img/head.jpg">
+						</div>
+						<div class="user-head">
+							<img name="headpic" src="./img/head.jpg">
+						</div>
+					</div>
+					<div class="userinfo">
+						<div class="user-name">
+							<a>muko</a>
+						</div>
+						<div class="user-profile">
+							<p>没有个人简介</p>
+						</div>
+						<div class="user-infocard">
+							<table class="tb-counter">
+								<tbody>
+									<tr>
+										<td class="">
+											<a href="#"><strong id="follows" class="user-strong"></strong><span class="s-txt2">关注</span></a></td>
+										<td class="s-line1">
+											<a href="#"><strong id="fans" class="user-strong"></strong><span class="s-txt2">粉丝</span></a></td>
+										<td class="s-line1">
+											<a href="#"><strong id="articals" class="user-strong"></strong><span class="s-txt2">文章</span></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 热门文章 -->
+				<div class="hot card">
+					<div class="title">热门文章</div>
+					<div class="hot-main">
+						<ul class="hot-list">
+							<li>
+								<a href="">
+									<div class="hot-img"><img title="进入页面查看" src="./img/pic.jpg"></div>
+									<div class="hot-info">noita</div>
+									<div class="clr"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="hot-img"><img title="进入页面查看" src="./img/pic.jpg"></div>
+									<div class="hot-info">noita</div>
+									<div class="clr"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="hot-img"><img title="进入页面查看" src="./img/pic.jpg"></div>
+									<div class="hot-info">noita</div>
+									<div class="clr"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="hot-img"><img title="进入页面查看" src="./img/pic.jpg"></div>
+									<div class="hot-info">noita</div>
+									<div class="clr"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="hot-img"><img title="进入页面查看" src="./img/pic.jpg"></div>
+									<div class="hot-info">noita</div>
+									<div class="clr"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="hot-img"><img title="进入页面查看" src="./img/pic.jpg"></div>
+									<div class="hot-info">noita</div>
+									<div class="clr"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="hot-img"><img title="进入页面查看" src="./img/pic.jpg"></div>
+									<div class="hot-info">noita</div>
+									<div class="clr"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="footer">
+		<div class="footer-info">
+			<h1>Hicool</h1>
+		</div>
+	</div>
+	<!-- 右下角漂浮工具栏 -->
+	<div class="items">
+		<div class="items-card card"><a data-toggle="modal" data-target="#messageModal"><img title="反馈" src="./img/message.png"></a></div>
+		<div class="items-card card"><a data-toggle="modal" data-target="#searchModal"><img title="搜索" src="./img/search.png"></a></div>
+		<div class="items-card card"><a class="toAnchor" href="#topAnchor"><img title="回到顶部" src="./img/up.png"></a></div>
+	</div>
+	<!-- 手机端下方菜单栏 -->
+	<div class="phone-items">
+		<div class="items-position row">
+			<div class="phone-itemscard"><a><img src="./img/list.png"></a></div>
+			<div class="phone-itemscard"><a data-toggle="modal" data-target="#messageModal"><img src="./img/message.png"></a></div>
+			<div class="phone-itemscard"><a data-toggle="modal" data-target="#searchModal"><img src="./img/search.png"></a></div>
+			<div class="phone-itemscard"><a class="toAnchor" href="#topAnchor"><img src="./img/up.png"></a></div>
+		</div>
+	</div>
+	<!-- 信息对话框 -->
+	<div class="modal fade" id="messageModal">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+					<h4 class="modal-title">问题反馈</h4>
+				</div>
+				<div class="modal-body">
+					<p>给管理员发私信：</p>
+					<div class="input-control message-box">
+						<textarea class="message-input"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer my-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">发送</button>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<!-- 搜索对话框 -->
+	<div class="modal fade" id="searchModal">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header search-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+					<h2 class="modal-title">搜索一下</h4>
+				</div>
+				<div class="modal-body search-body">
+					<div class="input-control search-box">
+					  	<input type="search" class="form-control search-input" placeholder="搜索标题">
+					</div>
+				</div>
+				<div class="modal-footer my-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">搜索</button>
+			    </div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
